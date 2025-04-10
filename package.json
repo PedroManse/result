@@ -1,0 +1,10 @@
+{
+  "name": "result",
+  "version": "0.0.0",
+  "description": "funtion with multiple possibles parameters combinations",
+  "main": "src/main.ts",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "ts-node": "^10.9.2"
+  }
+}
