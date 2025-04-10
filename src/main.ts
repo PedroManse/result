@@ -11,15 +11,12 @@ const y = new Promise<string>(_=>{
 });
 
 function isErr(e: unknown): e is {errCode: number} {
-	return !!e && typeof e === "object" && "errCode" in e;
+	if (!!e && typeof e === "object" && "errCode" in e) {
+		return typeof e.errCode === "number"
+	}
+	return false
 }
 
-const x1 = Result.fromPromise(x, isErr);
-const y1 = Result.fromPromise(y, isErr);
 (async ()=>{
-	const x2 = await x1;
-	console.log(x2);
-	const y2 = await y1;
-	console.log(y2);
 })();
 
